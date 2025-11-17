@@ -1,10 +1,9 @@
 const backgroundImages = [
-    './img/background/EspetinhosFC-119.jpg',
-    './img/background/Espetinhos-108.jpg',
-    './img/background/Espetinhos-080.jpg',
-    './img/background/Espetinhos-016.jpg',
-    './img/background/Espetinhos-010.jpg',
-    './img/background/Espetinhos-076.jpg'
+    './img/Espetinhos-010.jpg',
+    './img/Espetinhos-016.jpg',
+    './img/Espetinhos-076.jpg',
+    './img/Espetinhos-080.jpg',
+    './img/Espetinhos-108.jpg'
 ];
 
 function getRandomImage() {
