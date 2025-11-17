@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Estilos principais -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" />
+
+    <title>Espetinhos F.C</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
+
+    <!-- 🔹 Pré-carregamento de TODAS as imagens usadas no background.js -->
+    <link rel="preload" as="image" href="img/background/EspetinhosFC-119.jpg">
+    <link rel="preload" as="image" href="img/background/Espetinhos-108.jpg">
+    <link rel="preload" as="image" href="img/background/Espetinhos-080.jpg">
+    <link rel="preload" as="image" href="img/background/Espetinhos-016.jpg">
+    <link rel="preload" as="image" href="img/background/Espetinhos-010.jpg">
+    <link rel="preload" as="image" href="img/background/Espetinhos-076.jpg">
+</head>
+
+<body class="home-page">
+    <!-- 🔹 Container de fundo fixo -->
+    <div class="background-container"></div>
+
+    <!-- 🔹 Cabeçalho fixo -->
+    <header class="content">
+        <div class="logo">
+            <a href="index.html">
+                <img src="./img/logov3.png" alt="Logo Espetinhos F.C" />
+            </a>
+        </div>
+
+        <nav>
+            <ul class="list-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobrenos.html">Sobre nós</a></li>
+                <li><a href="unidades.html">Nossas Unidades</a></li>
+                <li>
+                    <a href="https://www.instagram.com/espetinhosfc/" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="menu-toggle">
+            <div class="one"></div>
+            <div class="two"></div>
+            <div class="three"></div>
+        </div>
+    </header>
+
+    <!-- 🔹 Seção principal -->
+    <section class="first-section">
+        <div class="typing-animation">
+            <span class="text-animation"></span>
+        </div>
+
+        <div class="conteudo-principal">
+            <div class="btn">
+                <a href="unidades.html">
+                    <button class="unidades">Nossas Unidades &amp; Cardápios</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🔹 Rodapé -->
+    <footer>
+        <p>© 2025 Espetinhos F.C - Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- 🔹 Scripts otimizados (carregam após o HTML) -->
+    <script src="digitacao.js" defer></script>
+    <script src="menutoggle.js" defer></script>
+    <script src="background.js" defer></script>
+</body>
+
+</html>

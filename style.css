@@ -1,0 +1,634 @@
+/* ==========================================================
+   BASE GERAL - FONTES E RESET
+   ========================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    font-size: 62.5%;
+    font-family: 'Open Sans', sans-serif;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================
+   HEADER E FOOTER - PRETO SÓLIDO
+   ========================================================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #000;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo {
+    width: 180px;
+}
+
+.logo img {
+    width: 100%;
+    height: auto;
+}
+
+.list-menu {
+    display: flex;
+    gap: 3rem;
+}
+
+.list-menu li a {
+    color: #fff;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+}
+
+.list-menu li a:hover {
+    color: #ffc506;
+    border-bottom: 3px solid #ffc506;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+    transition: all 0.3s;
+}
+
+footer {
+    background: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    width: 100%;
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* ==========================================================
+   FUNDOS COM TEXTURA
+   ========================================================== */
+body.cardapio-page,
+body.sobrenos-page,
+body.unidades-page {
+    background-image: url("./img/background_cardapios.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    color: #fff;
+}
+
+/* ==========================================================
+   HOME (INDEX)
+   ========================================================== */
+body.home-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* garante altura mínima sem travar */
+}
+
+.background-container {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.background-image {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: opacity 1s ease-in-out;
+    animation: zoomInOut 10s infinite alternate ease-in-out;
+}
+
+.background-image.hide {
+    opacity: 0;
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.1);
+    }
+}
+
+.first-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: calc(100vh - 80px);
+    /* compensa o header fixo */
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+.text-animation {
+    color: #fff;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 5rem);
+    border-right: 0.15em solid #ffc506;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+}
+
+.btn button {
+    width: 300px;
+    height: 60px;
+    background-color: #ffc506;
+    color: #000;
+    border-radius: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn button:hover {
+    background-color: transparent;
+    color: #ffc506;
+    border: 2px solid #ffc506;
+}
+
+/* ==========================================================
+   SOBRE NÓS
+   ========================================================== */
+.sobrenos {
+    background: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 6rem 3rem;
+    margin: 12rem auto 8rem;
+    width: 90%;
+    max-width: 900px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+}
+
+.contentsobre h2 {
+    font-size: 3.6rem;
+    text-transform: uppercase;
+    color: #ffc506;
+    margin-bottom: 2rem;
+}
+
+.contentsobre p {
+    font-size: 1.8rem;
+    line-height: 1.6;
+    color: #f1f1f1;
+    margin-bottom: 1.5rem;
+}
+
+/* BOTÃO EXCLUSIVO SOBRE NÓS */
+.btn-sobrenos {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-sobrenos button {
+    width: 360px;
+    height: 70px;
+    background-color: #ffc506;
+    color: #000;
+    border-radius: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+}
+
+.btn-sobrenos button:hover {
+    background-color: transparent;
+    color: #ffc506;
+    border: 2px solid #ffc506;
+}
+
+/* ==========================================================
+   UNIDADES - LAYOUT
+   ========================================================== */
+body.unidades-page::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0.85) 85%);
+    z-index: -1;
+    pointer-events: none;
+}
+
+.unidades-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 11rem;
+    margin-bottom: 6rem;
+    gap: 6rem;
+    padding: 2rem;
+}
+
+.ponto-comercio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.85);
+    border-radius: 14px;
+    padding: 3rem 2rem;
+    width: 90%;
+    max-width: 880px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6), 0 0 15px rgba(255, 197, 6, 0.05);
+    backdrop-filter: blur(3px);
+}
+
+.ponto-comercio img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.ponto-comercio h2 {
+    color: #ffc506;
+    font-size: 2.8rem;
+    margin-bottom: 1.2rem;
+    text-align: center;
+}
+
+.ponto-comercio p {
+    color: #fff;
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ==========================================================
+   CARDÁPIO (TIPO PDF)
+   ========================================================== */
+.menu-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin: 10rem auto 8rem;
+    width: 100%;
+    max-width: 100%;
+    padding: 0 2%;
+}
+
+.menu-scroll img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 10px;
+    object-fit: contain;
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.menu-scroll img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.8);
+}
+
+/* ==========================================================
+   BOTÃO VOLTAR - EXCLUSIVO (.btn-voltar)
+   ========================================================== */
+.btn-voltar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #ffc506;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    border-radius: 12px;
+    padding: 1.5rem 3rem;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    margin: 4rem auto 6rem;
+    width: fit-content;
+    min-width: 380px;
+    text-align: center;
+}
+
+.btn-voltar i {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.btn-voltar:hover {
+    background-color: transparent;
+    color: #ffc506;
+    border: 2px solid #ffc506;
+    box-shadow: 0 4px 12px rgba(255, 197, 6, 0.4);
+}
+
+/* ==========================================================
+   MAIN-CONTENT
+   ========================================================== */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ==========================================================
+   RESPONSIVIDADE
+   ========================================================== */
+@media (max-width: 768px) {
+    .list-menu {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: flex;
+    }
+
+    .ponto-comercio {
+        width: 95%;
+        padding: 2rem;
+    }
+
+    .ponto-comercio h2 {
+        font-size: 2.4rem;
+    }
+
+    .ponto-comercio p {
+        font-size: 1.5rem;
+    }
+
+    .btn-voltar {
+        width: 85%;
+        min-width: unset;
+        padding: 1.2rem 2rem;
+        font-size: 1.4rem;
+    }
+
+    .sobrenos {
+        padding: 4rem 2rem;
+        width: 95%;
+    }
+
+    .contentsobre h2 {
+        font-size: 2.8rem;
+    }
+
+    .contentsobre p {
+        font-size: 1.6rem;
+    }
+
+    .btn-sobrenos button {
+        width: 280px;
+        height: 65px;
+        font-size: 1.6rem;
+    }
+
+    .background-image {
+        animation: none !important;
+        transform: scale(1);
+    }
+}
+
+/* ==========================================================
+   BOTÕES DE AÇÃO - PÁGINA UNIDADES E CARDÁPIOS
+   ========================================================== */
+.link-wpp,
+.link-cardapio,
+.link-mapas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.link-wpp a,
+.link-cardapio a,
+.link-mapas a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+    background-color: #ffc506;
+    color: #000;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.link-wpp a:hover,
+.link-cardapio a:hover,
+.link-mapas a:hover {
+    background-color: transparent;
+    color: #ffc506;
+    border: 2px solid #ffc506;
+    box-shadow: 0 0 10px rgba(255, 197, 6, 0.4);
+}
+
+.link-wpp a i,
+.link-cardapio a i,
+.link-mapas a i {
+    font-size: 1.8rem;
+    margin-right: 0.6rem;
+}
+
+/* ==========================================================
+   BOTÃO VOLTAR - PÁGINAS DE CARDÁPIO
+   ========================================================== */
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: #ffc506;
+    color: #000;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    border-radius: 12px;
+    padding: 1.5rem 3rem;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    width: fit-content;
+    margin: 4rem auto 6rem;
+    min-width: 380px;
+    text-align: center;
+}
+
+.button i {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.button:hover {
+    background-color: transparent;
+    color: #ffc506;
+    border: 2px solid #ffc506;
+    box-shadow: 0 4px 12px rgba(255, 197, 6, 0.4);
+}
+
+/* ==========================================================
+   APRIMORAMENTO VISUAL - PÁGINA NOSSAS UNIDADES
+   ========================================================== */
+.ponto-comercio {
+    background: rgba(0, 0, 0, 0.88);
+    border-radius: 16px;
+    padding: 4rem 3rem;
+    width: 90%;
+    max-width: 900px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(255, 197, 6, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ponto-comercio:hover {
+    transform: scale(1.01);
+    box-shadow: 0 0 40px rgba(255, 197, 6, 0.15);
+}
+
+.ponto-comercio h2 {
+    color: #ffc506;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+}
+
+.ponto-comercio p {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    color: #f0f0f0;
+    text-align: center;
+    margin-bottom: 1.8rem;
+    max-width: 90%;
+}
+
+.ponto-comercio p:last-of-type {
+    font-weight: 600;
+    color: #ffd54a;
+    margin-top: 1rem;
+}
+
+/* Espaçamento e centralização dos botões */
+.link-wpp,
+.link-cardapio,
+.link-mapas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Ícones maiores e com leve brilho */
+.link-wpp a i,
+.link-cardapio a i,
+.link-mapas a i {
+    font-size: 2rem;
+    margin-right: 0.6rem;
+}
+
+/* Animação sutil de hover */
+.link-wpp a:hover,
+.link-cardapio a:hover,
+.link-mapas a:hover {
+    transform: translateY(-2px);
+}
+
+/* Responsividade aprimorada */
+@media (max-width: 768px) {
+    .ponto-comercio {
+        padding: 3rem 1.8rem;
+    }
+
+    .ponto-comercio h2 {
+        font-size: 2.6rem;
+    }
+
+    .ponto-comercio p {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .list-menu {
+        display: none;
+        flex-direction: column;
+        background: #000;
+        position: absolute;
+        top: 80px;
+        right: 0;
+        width: 100%;
+        text-align: center;
+        padding: 2rem 0;
+    }
+
+    .list-menu.active {
+        display: flex;
+    }
+
+    .menu-toggle.active .one {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active .two {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .three {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+}
